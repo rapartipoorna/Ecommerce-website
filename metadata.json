@@ -1,0 +1,13 @@
+{
+  "name": "Quantum Commerce",
+  "description": "A high-conversion, premium e-commerce marketplace with AI-driven discovery and 2026 aesthetic.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "AI Personalized Discovery",
+    "Smart Search",
+    "Gamified Rewards"
+  ]
+}

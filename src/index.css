@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+
+  --color-background: oklch(0.98 0.01 240);
+  --color-foreground: oklch(0.15 0.02 240);
+
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.15 0.02 240);
+
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.15 0.02 240);
+
+  --color-primary: oklch(0.55 0.25 260);
+  --color-primary-foreground: oklch(1 0 0);
+
+  --color-secondary: oklch(0.95 0.02 260);
+  --color-secondary-foreground: oklch(0.2 0.05 260);
+
+  --color-muted: oklch(0.97 0.01 240);
+  --color-muted-foreground: oklch(0.45 0.02 240);
+
+  --color-accent: oklch(0.7 0.2 45);
+  --color-accent-foreground: oklch(1 0 0);
+
+  --color-destructive: oklch(0.6 0.2 20);
+  --color-destructive-foreground: oklch(1 0 0);
+
+  --color-border: oklch(0.9 0.01 240);
+  --color-input: oklch(0.9 0.01 240);
+  --color-ring: oklch(0.55 0.25 260);
+
+  --color-chart-1: oklch(0.65 0.2 220);
+  --color-chart-2: oklch(0.55 0.15 180);
+  --color-chart-3: oklch(0.45 0.1 140);
+  --color-chart-4: oklch(0.75 0.2 280);
+  --color-chart-5: oklch(0.6 0.25 320);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)];
+}
+
+.carousel-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.carousel-hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
